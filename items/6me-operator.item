@@ -1,25 +1,30 @@
-ITEM: 6ME STATION 02
-TYPE: bench
+ITEM: 6ME OPERATOR
+TYPE: operator
 VERSION: raw-1
 
 # PURPOSE
-- second station test
-- independent behavior
+- define operator mapping
+- raw input → raw output
 
-# INPUTS
-? X
-? Y
-? Z
+# OPERATORS
+? = input
+! = output
+& = state
 
-# OUTPUTS
-! X
-! Y
-! Z
+# STATES
+&idle
+&processing
+&error
 
-# RULES
-& raw in → raw out
-& no merge with station 01
-& no interpretation
+# FLOW
+? → &processing
+&processing → !output
+&error → !err
+
+# TEST CASES
+?A → !A
+?B → !B
+?0 → !0
+?* → !*
 
 END
-
