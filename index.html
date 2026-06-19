@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>6ME Bench Viewer</title>
+<style>
+    body { background:#111; color:#eee; font-family: monospace; padding:20px; }
+    .block { margin-bottom:20px; padding:10px; border:1px solid #444; }
+    input, textarea { width:100%; background:#222; color:#eee; border:1px solid #555; padding:8px; }
+</style>
+</head>
+<body>
+
+<h2>6ME Bench Viewer</h2>
+
+<div class="block">
+    <h3>Input</h3>
+    <input id="benchInput" placeholder="type raw input...">
+</div>
+
+<div class="block">
+    <h3>Output</h3>
+    <textarea id="benchOutput" rows="6" readonly></textarea>
+</div>
+
+<script>
+document.getElementById("benchInput").addEventListener("input", function() {
+    let v = this.value;
+    document.getElementById("benchOutput").value = v;
+});
+</script>
+
+</body>
+</html>
 
