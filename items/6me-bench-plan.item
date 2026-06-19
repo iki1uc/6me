@@ -1,25 +1,25 @@
-ITEM: 6ME STATION 01
+ITEM: 6ME BENCH PLAN
 TYPE: bench
 VERSION: raw-1
 
 # PURPOSE
-- basic station test
-- raw input → raw output
+- define test inputs
+- define expected outputs
+- define operator behavior
 
 # INPUTS
-? A
-? B
-? C
+? test_1
+? test_2
+? test_3
 
 # OUTPUTS
-! A
-! B
-! C
+! out_1
+! out_2
+! out_3
 
 # RULES
 & raw in → raw out
-& no logic
-& no correction
+& no auto-correction
+& no meta behavior
 
 END
-
