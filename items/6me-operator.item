@@ -1,1 +1,25 @@
+ITEM: 6ME STATION 02
+TYPE: bench
+VERSION: raw-1
+
+# PURPOSE
+- second station test
+- independent behavior
+
+# INPUTS
+? X
+? Y
+? Z
+
+# OUTPUTS
+! X
+! Y
+! Z
+
+# RULES
+& raw in → raw out
+& no merge with station 01
+& no interpretation
+
+END
 
