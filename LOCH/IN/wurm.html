@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NC.WURMLOCH.tmp</title>
+<style>
+    body { background:#000; color:#0f0; font-family: monospace; padding:20px; }
+    .block { border:1px solid #0f0; padding:10px; margin-bottom:10px; }
+    .label { color:#0ff; }
+    textarea { width:100%; height:120px; background:#010; color:#0f0; border:1px solid #060; }
+</style>
+</head>
+<body>
 
+<div class="block">
+    <span class="label">NC.WURMLOCH.tmp</span><br>
+    version: raw-hw-01<br>
+    mode: hardware<br>
+    rawator: active<br>
+    ghost: output<br>
+</div>
+
+<div class="block">
+    <span class="label">KERN</span><br>
+    form: sphere<br>
+    matter: raw.core<br>
+    spin: 0<br>
+    bind: molecule-chain<br>
+</div>
+
+<div class="block">
+    <span class="label">ITEM</span><br>
+    form: block<br>
+    id: item.wl.X<br>
+    kern: impulse.raw<br>
+    slot: WL.X<br>
+</div>
+
+<div class="block">
+    <span class="label">MOLEKUEL</span><br>
+    atom: raw<br>
+    bind: 6me<br>
+    drift: micro<br>
+    impulse: pipeline012<br>
+</div>
+
+<div class="block">
+    <span class="label">BLOCKFORM</span><br>
+    form: cylinder.block<br>
+    kern: KERN<br>
+    item: ITEM<br>
+    molecule: MOLEKUEL<br>
+    ghost: active<br>
+    rawator: on<br>
+</div>
+
+<div class="block">
+    <span class="label">RAW INPUT</span><br>
+    <textarea id="rawIn" placeholder="type RAW here..."></textarea>
+</div>
+
+<div class="block">
+    <span class="label">RAW OUTPUT (mirror)</span><br>
+    <textarea id="rawOut" readonly></textarea>
+</div>
+
+<script>
+document.getElementById('rawIn').addEventListener('input', function () {
+    document.getElementById('rawOut').value = this.value;
+});
+</script>
+
+</body>
+</html>
