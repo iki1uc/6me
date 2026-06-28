@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>6ME Bench Viewer</title>
+<meta charset="utf-8">
+<title>NC Start</title>
 <style>
-    body { background:#111; color:#eee; font-family: monospace; padding:20px; }
-    .block { margin-bottom:20px; padding:10px; border:1px solid #444; }
-    input, textarea { width:100%; background:#222; color:#eee; border:1px solid #555; padding:8px; }
+  body { background:#000; color:#0f0; font-family:system-ui; padding:20px; }
 </style>
-</head>
-<body>
-
-<h2>6ME Bench Viewer</h2>
-
-<div class="block">
-    <h3>Input</h3>
-    <input id="benchInput" placeholder="type raw input...">
-</div>
-
-<div class="block">
-    <h3>Output</h3>
-    <textarea id="benchOutput" rows="6" readonly></textarea>
-</div>
 
 <script>
-document.getElementById("benchInput").addEventListener("input", function() {
-    let v = this.value;
-    document.getElementById("benchOutput").value = v;
-});
-</script>
+async function UploadCheck(){
+  try {
+    const res = await fetch("iAM.html");
+    return res.status === 200 ? "OK" : "FEHLT";
+  } catch(e){
+    return "FEHLT";
+  }
+}
 
+async function NC_Fallback(){
+  const status = await UploadCheck();
+
+  if(status === "OK"){
+    window.location.href = "iAM.html";
+  } else {
+    document.body.innerHTML = `
+      <h1 style="color:#0f0;">NC Fallback aktiv</h1>
+      <p style="color:#0f0;">iAM.html fehlt – index.html übernimmt automatisch.</p>
+    `;
+  }
+}
+
+window.addEventListener("load", NC_Fallback);
+</script>
+</head>
+
+<body>
+<h1>NC Start</h1>
+<p>Prüfe iAM.html…</p>
 </body>
 </html>
-
