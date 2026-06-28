@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NC – Visualizer</title>
+
+<style>
+  body { background:#000; color:#0f0; font-family:system-ui; padding:20px; }
+</style>
+</head>
+
+<body>
+
+<!-- ===========================
+     NC STARTSCREEN
+=========================== -->
+<div id="ncStart" style="
+  position:fixed; inset:0;
+  background:#000;
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column;
+  color:#0f0; font-family:system-ui;
+  transition:opacity 0.6s;
+">
+  <h1 style="font-size:32px;">NC startet…</h1>
+  <p style="opacity:0.7;">GHOST initialisiert • 2ME erwacht • Wurmloch stabilisiert</p>
+</div>
+
+<script>
+function NC_Startscreen(){
+  setTimeout(() => {
+    document.getElementById("ncStart").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("ncStart").remove();
+    }, 600);
+  }, 1200);
+}
+window.addEventListener("load", NC_Startscreen);
+</script>
+
+
+<!-- ===========================
+     NC GHOST INTRO
+=========================== -->
+<div id="ghostIntro" style="
+  position:fixed; left:20px; top:20px;
+  background:#001100; padding:12px 16px;
+  border-radius:8px; color:#00ff88;
+  font-size:14px; opacity:0; transition:opacity 0.6s;
+">
+  GHOST: online<br>
+  2ME: Innenraum aktiv<br>
+  Wurmloch: geschlossen
+</div>
+
+<script>
+function NC_GhostIntro(){
+  const box = document.getElementById("ghostIntro");
+  box.style.opacity = "1";
+  setTimeout(() => box.style.opacity = "0", 2000);
+}
+window.addEventListener("load", NC_GhostIntro);
+</script>
+
+
+<!-- ===========================
+     NC VISUALIZER CONTENT
+=========================== -->
+<h1>NC – Visualizer</h1>
+<p>NC läuft stabil…</p>
+
+
+<!-- ===========================
+     NC FRIENDLY OUTRO
+=========================== -->
+<div id="ncOutro" style="
+  position:fixed; inset:0;
+  background:radial-gradient(circle at center, #001100, #000000);
+  color:#00ff88; font-family:system-ui;
+  display:none; text-align:center; padding-top:80px;
+">
+  <h1 style="font-size:32px;">NC verabschiedet sich</h1>
+  <p style="font-size:18px; margin-top:20px;">
+    GHOST ruht • 2ME stabil • Wurmloch geschlossen<br>
+    Bis später, Ridvan.
+  </p>
+</div>
+
+<script>
+function NC_Outro(){
+  document.getElementById("ncOutro").style.display = "block";
+}
+window.addEventListener("beforeunload", NC_Outro);
+</script>
+
+</body>
+</html>
 
