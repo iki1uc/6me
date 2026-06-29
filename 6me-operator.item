@@ -1,1 +1,24 @@
+ITEM: 6ME OPERATOR
+TYPE: operator
+VERSION: raw-1
+
+# OPERATORS
+? = input
+! = output
+& = state
+
+# STATES
+&idle
+&processing
+&error
+
+# FLOW
+?NR6 → &processing
+&processing → ?MS6
+?MS6 → &processing
+&processing → ?TG3
+?TG3 → !OR9
+&error → !err
+
+END
 
