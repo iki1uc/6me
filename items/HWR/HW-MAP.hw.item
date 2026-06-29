@@ -1,1 +1,24 @@
+ITEM: HW-MAP
+TYPE: hardware
+VERSION: raw-1
+
+# PURPOSE
+- route hardware signals
+
+# INPUTS
+?flow0
+?flow1
+?flowX
+
+# OUTPUTS
+!route0
+!route1
+!routeX
+
+# RULES
+&flow0 → route0
+&flow1 → route1
+&flowX → routeX
+
+END
 
