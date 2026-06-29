@@ -1,1 +1,24 @@
+ITEM: HW-FLOW
+TYPE: hardware
+VERSION: raw-1
+
+# PURPOSE
+- define hardware flow chain
+
+# INPUTS
+?hw0
+?hw1
+?hwX
+
+# OUTPUTS
+!flow0
+!flow1
+!flowX
+
+# RULES
+&hw0 → flow0
+&hw1 → flow1
+&hwX → flowX
+
+END
 
