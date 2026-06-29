@@ -1,1 +1,23 @@
+ITEM: HW-PULSE
+TYPE: hardware
+VERSION: raw-1
 
+# PURPOSE
+- generate hardware pulses
+
+# INPUTS
+?route0
+?route1
+?routeX
+
+# OUTPUTS
+!pulse0
+!pulse1
+!pulseX
+
+# RULES
+&route0 → pulse0
+&route1 → pulse1
+&routeX → pulseX
+
+END
