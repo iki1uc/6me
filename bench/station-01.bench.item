@@ -1,1 +1,16 @@
+ITEM: 6ME STATION 01
+TYPE: bench
+VERSION: raw-1
+
+# INPUTS
+?NR6
+?MS6
+?TG3
+
+# OUTPUTS
+!NR6
+!MS6
+!TG3
+
+END
 
