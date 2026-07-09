@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>6e Identity Loader</title>
+<style>
+  body { background:#000; color:#0f0; font-family:system-ui; padding:20px; }
+</style>
+
+<script>
+async function load6e(){
+  try {
+    const res = await fetch("6e.core.html");
+    if(res.status === 200){
+      window.location.href = "6e.core.html";
+    } else {
+      window.location.href = "iAM.iki.html";
+    }
+  } catch(e){
+    window.location.href = "iAM.iki.html";
+  }
+}
+
+window.addEventListener("load", load6e);
+</script>
+</head>
+
+<body>
+<h1>6e Identity Loader</h1>
+<p>Lade 6e…</p>
+</body>
+</html>
