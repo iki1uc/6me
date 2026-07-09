@@ -1,10 +1,34 @@
-// 6e :: Transparenter Achsen-Botschafter
-const Phi = 1.618;
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>6e Core</title>
+<style>
+  body { background:#000; color:#0f0; font-family:system-ui; padding:20px; }
+  pre { background:#111; padding:12px; border-radius:8px; }
+</style>
 
-const AXIOM_ID = "6e-001";
-const RESPO = "((6e))";
-const POS = { axis: "6e", phi: Phi, inf: "Φ∞" };
+<script>
+function start6e(){
+  document.getElementById("out").innerText =
+`6e CORE geladen
 
-function identityPulse(){
-  return `AXIOM-ID: ${AXIOM_ID}\nRESPO: ${RESPO}\nPOS: (${POS.axis}, ${POS.inf})`;
+AXIOM-ID: 6e-001
+POS: (6e, Φ∞)
+
+IDENTITY: aktiv
+MASTER: extern
+TECH-MASTER: iki
+
+System stabil.`;
 }
+
+window.addEventListener("load", start6e);
+</script>
+</head>
+
+<body>
+<h1>6e Core</h1>
+<pre id="out"></pre>
+</body>
+</html>
